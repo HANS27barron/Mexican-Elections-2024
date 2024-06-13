@@ -43,6 +43,33 @@ estadoS = [
     "Zacatecas"
 ]
 
+
+def sen_Ganador(estado):
+    senadores = []
+    count = 0
+    for index, row in df.iterrows():
+        if row["Estado"] == estado:
+            senadores.append((row["Partido/Coalición"], row["Nombre"]))
+            count += 1
+            if count == 2:
+                break
+    return(pd.DataFrame(senadores, columns=["Partido/Coalición","Nombre"]))
+
+
+def color_Sen_Ganador(estado):
+    res = sen_Ganador(estado)
+    partido = res.iloc[0]["Partido/Coalición"]
+    if partido==("Movimiento Ciudadano" or "Partido De La Revolución Democrática"):
+        return("orange")
+    elif partido==("Morena" or "Sigamos Haciendo Historia"):
+        return("violet")
+    elif partido==("Partido Del Trabajo"):
+        return("red")
+    elif partido==("Partido Verde Ecologista de México" or "Partido Revolucionario Institucional"):
+        return("green")
+    elif partido=="Partido Acción Nacional" or "Fuerza y Corazón por México":
+        return("blue")
+
 counts = {search_string: 0 for search_string in estadoS}
 
 for search_string in estadoS:
@@ -58,5 +85,17 @@ for state, count in counts.items():
 
 chart_data = pd.DataFrame(c, columns=["Candidaturas"], index=estadoS)
 
-print(sen)
-print(c)
+
+def cand_Estado(estado):
+    candidato = df[df['Estado'].str.contains(estado, na=False)][["Partido/Coalición", "Nombre"]]
+    return candidato
+
+
+
+
+print(cand_Estado("Aguascalientes"))
+
+#print(cand_Estado("Aguascalientes"))
+
+#print(sen)
+#print(c)
