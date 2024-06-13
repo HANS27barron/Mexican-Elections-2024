@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_gsheets import GSheetsConnection
 from streamlit_image_comparison import image_comparison
 from file import newFile
 from sheets import select
