@@ -59,7 +59,7 @@ x = st.slider("How much do u know?", 0,10)
 if x<3:
     st.write("You need to start learning!")
 if 3<=x<=6:
-    st.write("Keep on learning!")
+    st.write("Keep on learning")
 if 6<x<=9:
     st.write("Just a few more!")
 if x==10:
@@ -70,7 +70,6 @@ if x==10:
 #st.logo(sidebar_logo)
 #st.sidebar.markdown("Mathematics AA IB")
 
-st.write(newFile)
 #st.write(F)
 
 
