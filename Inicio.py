@@ -1,13 +1,10 @@
 import streamlit as st
-from streamlit_image_comparison import image_comparison
 from file import newFile
 from sheets import select
 
 # pip install streamlit
 # streamlit run home.py
 # https://docs.streamlit.io/develop/concepts/architecture/run-your-app
-
-st.set_page_config(page_title="Image-Comparison Example", layout="centered")
 
 if 'presiSi' not in st.session_state:
     st.session_state.presiSi = 0
@@ -70,10 +67,3 @@ if x==10:
 #st.sidebar.markdown("Mathematics AA IB")
 
 #st.write(F)
-
-
-# render image-comparison
-image_comparison(
-    img1="https://www.infobae.com/new-resizer/EJWtjbaQrzkZtHz7n177UJ2NK4Q=/1200x900/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/LVSFDED33JBKNDGDRQUWJHIBYA.jpg",
-    img2="https://s.yimg.com/ny/api/res/1.2/ApWHyvY.yMWZN049ILeRwA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2024-02/268ccaf0-db4d-11ee-bd1e-50dddac1a699"
-)
