@@ -1,6 +1,6 @@
 import streamlit as st
-from file import newFile
-from sheets import select
+#from file import newFile
+#from sheets import select
 
 # pip install streamlit
 # streamlit run home.py
