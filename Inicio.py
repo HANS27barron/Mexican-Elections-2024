@@ -49,7 +49,6 @@ with st.expander("Presidente de la República"):
 
 with st.expander("Cámara de Senadores del Congreso de la Unión"):
     st.page_link("pages/Senadores.py", label="Haz click aquí para más información")
-    st.write(select)
 
 x = st.slider("How much do u know?", 0,10)
 if x<3:
